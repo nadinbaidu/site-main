@@ -326,8 +326,8 @@
                         <div style="display: flex; align-items: center;">
                             <span style="margin-right: 5px; font-weight: bold;">R$</span>
                             <input type="number" id="troco-input" class="form-group" 
-                                       placeholder="Ex: 50,00" step="0.01" min="0"
-                                       style="flex-grow: 1; margin-bottom: 0;">
+                                         placeholder="Ex: 50,00" step="0.01" min="0"
+                                         style="flex-grow: 1; margin-bottom: 0;">
                         </div>
                         <small style="color: #666; display: block; margin-top: 5px;">
                             Deixe em branco se não precisar de troco
@@ -471,13 +471,19 @@
 
         const cardapioDB = [
             // Burgers 180g
+            { id: 'p12', nome: 'Raw Chicken Bacon Especial...', preco: 37.90, descricao: 'Pão, hambúrguer 180g de Coxa e sobrecoxa empanado, bacon, queijo prato, molho artesanal, mix de repolho e saladas', imagem: 'https://raw.githubusercontent.com/nadinbaidu/fotos-card-pio/refs/heads/main/fotos-do-site-main/72D8984563E90E806B28221A7AD97691.jpeg', categoria: 'Burgers 180g' },
             { id: 'p1', nome: 'Doka Cheddar Bacon 180g', preco: 39.99, descricao: 'Hambúrguer 180g, pão brioche, cheddar, bacon crocante e molho artesanal.', imagem: 'https://engeve89.github.io/imagenscardapio/foto/doka-cheddar-bacon-180g.avif', categoria: 'Burgers 180g' },
             { id: 'p2', nome: 'Doka Duty', preco: 49.90, preco_antigo: 55.00, descricao: '2x Hambúrgueres 180g, bacon em dobro, queijo prato, cebola caramelizada em dobro, alface/rúcula, tomate e molho.', imagem: 'https://engeve89.github.io/imagenscardapio/foto/doka%20duty.avif', categoria: 'Burgers 180g' },
             { id: 'p3', nome: 'Big Doka', preco: 42.90, preco_antigo: 45.00, descricao: '2x Hambúrgueres 120g, alface, queijo, molho especial, cebola, picles, pão com gergelim.', imagem: 'https://images.unsplash.com/photo-1572802419224-296b0aeee0d9?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80', categoria: 'Burgers 180g' },
             { id: 'p4', nome: 'Doka Burguer 180g', preco: 36.90, descricao: 'Hambúrguer 180g, pão brioche, queijo prato e molho artesanal.', imagem: 'https://engeve89.github.io/imagenscardapio/foto/doka-burguer-180g.avif', categoria: 'Burgers 180g' },
             { id: 'p5', nome: 'doka cheese egg Bacon 180g', preco: 39.90, descricao: 'Hambúrguer 180g, pão brioche, queijo prato, bacon e molho artesanal.', imagem: 'https://engeve89.github.io/imagenscardapio/foto/bell-cheese-egg-bacon.avif', categoria: 'Burgers 180g' },
             { id: 'p6', nome: 'Doka Salada 180g', preco: 36.90, descricao: 'Hambúrguer 180g, pão brioche, queijo prato, alface ou rúcula, tomate e molho artesanal.', imagem: 'https://engeve89.github.io/imagenscardapio/foto/bell-cheese-salada.avif', categoria: 'Burgers 180g' },
-            
+            { id: 'p7', nome: 'Doka Burguer Simplão', preco: 24.90, descricao: 'Hambúrguer 180g, pão, picles, queijo prato e molho artesanal.', imagem: 'https://raw.githubusercontent.com/nadinbaidu/fotos-card-pio/refs/heads/main/fotos-do-site-main/111004.jpg', categoria: 'Burgers 180g' },
+            { id: 'p8', nome: 'Simplão EGG', preco: 26.90, descricao: 'Hambúrguer 180g, pão, catupiry, queijo cheddar, ovo, molho artesanal.', imagem: 'https://raw.githubusercontent.com/nadinbaidu/fotos-card-pio/refs/heads/main/fotos-do-site-main/111014.jpg', categoria: 'Burgers 180g' },
+            { id: 'p9', nome: 'X-Salada da Casa', preco: 34.90, descricao: 'Hambúrguer 180g, pão, queijo prato, molho artesanal, alface, tomate, cebola.', imagem: 'https://raw.githubusercontent.com/nadinbaidu/fotos-card-pio/refs/heads/main/fotos-do-site-main/111024.jpg', categoria: 'Burgers 180g' },
+            { id: 'p10', nome: 'Raw Chicken', preco: 35.90, descricao: 'Pão, hambúrguer 180g de Coxa e sobrecoxa empanado, queijo prato, catupiry, molho artesanal, picles.', imagem: 'https://raw.githubusercontent.com/nadinbaidu/fotos-card-pio/refs/heads/main/fotos-do-site-main/112114.png', categoria: 'Burgers 180g' },
+            { id: 'p11', nome: 'Raw Chicken Bacon', preco: 37.90, descricao: 'Pão, hambúrguer 180g de Coxa e sobrecoxa empanado, bacon, queijo prato, molho artesanal, alface, tomate.', imagem: 'https://raw.githubusercontent.com/nadinbaidu/fotos-card-pio/refs/heads/main/fotos-do-site-main/11260F0C9CBBF90DF85B96E3090A32BD.jpeg', categoria: 'Burgers 180g' },
+
             // Burgers 120g
             { id: 'b12_1', nome: 'Doka Burguer 120g', preco: 32.90, descricao: 'Hambúrguer 120g, pão brioche, queijo prato e molho da casa.', imagem: 'https://engeve89.github.io/imagenscardapio/foto/cheese-burguer-doka.jpg', categoria: 'Burgers 120g' },
             { id: 'b12_3', nome: 'Doka Bacon 120g', preco: 34.90, descricao: 'Hambúrguer 120g, pão brioche, queijo prato, bacon e molho da casa.', imagem: 'https://engeve89.github.io/imagenscardapio/foto/doka-cheddar-bacon.avif', categoria: 'Burgers 120g' },
@@ -489,7 +495,11 @@
 
             // Lanches de Frango
             { id: 'f2', nome: 'Doka Kids Chicken', preco: 29.90, descricao: 'Pão de gergelim, frango empanado, maionese, tomate e alface picado.', imagem: 'https://engeve89.github.io/imagenscardapio/foto/doka-kids-chicken.avif', categoria: 'Frango' },
-            
+            // Itens de frango adicionados também aqui
+            { id: 'f_p12', nome: 'Raw Chicken Bacon Especial...', preco: 37.90, descricao: 'Pão, hambúrguer 180g de Coxa e sobrecoxa empanado, bacon, queijo prato, molho artesanal, mix de repolho e saladas', imagem: 'https://raw.githubusercontent.com/nadinbaidu/fotos-card-pio/refs/heads/main/fotos-do-site-main/72D8984563E90E806B28221A7AD97691.jpeg', categoria: 'Frango' },
+            { id: 'f_p10', nome: 'Raw Chicken', preco: 35.90, descricao: 'Pão, hambúrguer 180g de Coxa e sobrecoxa empanado, queijo prato, catupiry, molho artesanal, picles.', imagem: 'https://raw.githubusercontent.com/nadinbaidu/fotos-card-pio/refs/heads/main/fotos-do-site-main/112114.png', categoria: 'Frango' },
+            { id: 'f_p11', nome: 'Raw Chicken Bacon', preco: 37.90, descricao: 'Pão, hambúrguer 180g de Coxa e sobrecoxa empanado, bacon, queijo prato, molho artesanal, alface, tomate.', imagem: 'https://raw.githubusercontent.com/nadinbaidu/fotos-card-pio/refs/heads/main/fotos-do-site-main/11260F0C9CBBF90DF85B96E3090A32BD.jpeg', categoria: 'Frango' },
+
             // Combos
             { id: 'c1', nome: 'Combo Dokinha 01', preco: 44.90, descricao: 'Pão brioche, Hambúrguer 150g, cheddar, molho especial + Fritas + Refri 350ml.', imagem: 'https://engeve89.github.io/imagenscardapio/foto/combo-dokinha01.avif', categoria: 'Combos' },
             { id: 'c2', nome: 'Combo Dokinha Salada', preco: 48.60, descricao: 'Pão brioche, Hambúrguer 150g, cheddar, cebola roxa, picles, alface, tomate, maionese + Fritas + Refri 350ml.', imagem: 'https://engeve89.github.io/imagenscardapio/foto/combo-dokinha-salada.avif', categoria: 'Combos' },
@@ -520,9 +530,9 @@
                 let precoHtml = `<div class="produto-preco">R$ ${produto.preco.toFixed(2).replace('.', ',')}</div>`;
                 if (produto.preco_antigo) {
                     precoHtml = `<div class="produto-preco-container">
-                                        <span class="produto-preco-antigo">R$ ${produto.preco_antigo.toFixed(2).replace('.', ',')}</span>
-                                        <span class="produto-preco">R$ ${produto.preco.toFixed(2).replace('.', ',')}</span>
-                                      </div>`;
+                                    <span class="produto-preco-antigo">R$ ${produto.preco_antigo.toFixed(2).replace('.', ',')}</span>
+                                    <span class="produto-preco">R$ ${produto.preco.toFixed(2).replace('.', ',')}</span>
+                                </div>`;
                 }
 
                 card.innerHTML = `<div class="produto-imagem-container"><img src="${produto.imagem}" class="produto-imagem" alt="${produto.nome}"></div><div class="produto-conteudo"><div class="produto-nome">${produto.nome} ${produto.badge ? `<span class="produto-badge">${produto.badge}</span>` : ''}</div><div class="produto-descricao">${produto.descricao}</div><div class="produto-footer">${precoHtml}<button class="add-btn" data-id="${produto.id}">+</button></div></div>`;
@@ -640,15 +650,37 @@
             btnContinuar.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Verificando...';
 
             try {
-                const response = await fetch('/api/identificar-cliente', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ telefone: telefoneLimpo })
-                });
+                // Simulação de API. Em um ambiente real, você faria uma requisição para o seu backend.
+                // Ex: const response = await fetch('/api/identificar-cliente', { ... });
+                // Aqui, vamos simular que o cliente "existe" se o telefone for '11987654321'
+                // e "novo" caso contrário.
+
+                let data = {};
+                if (telefoneLimpo === '11987654321') { // Telefone de exemplo para simular cliente existente
+                    data = {
+                        success: true,
+                        isNew: false,
+                        cliente: {
+                            telefone: telefoneCru, // Mantém o formato original para o clienteAtual
+                            nome: "Maria Silva",
+                            endereco: "Rua Exemplo, 123 - Bairro Centro",
+                            referencia: "Ao lado da padaria"
+                        }
+                    };
+                } else {
+                    data = {
+                        success: true,
+                        isNew: true,
+                        cliente: {
+                            telefone: telefoneCru, // Mantém o formato original para o clienteAtual
+                            nome: "",
+                            endereco: "",
+                            referencia: ""
+                        }
+                    };
+                }
                 
-                const data = await response.json();
-                
-                if (!response.ok || !data.success) {
+                if (!data.success) { // Simula erro da API
                     throw new Error(data.message || 'Erro ao verificar telefone.');
                 }
                 
@@ -727,21 +759,19 @@
             };
 
             try {
-                const response = await fetch('/api/criar-pedido', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(pedido)
-                });
+                // Simulação de API para criar pedido. Em um ambiente real, você faria uma requisição para o seu backend.
+                // Ex: const response = await fetch('/api/criar-pedido', { ... });
+                // Aqui, vamos simular um ID de pedido e um código de entrega.
 
-                const data = await response.json();
+                const numeroPedido = Math.floor(Math.random() * 1000000) + 1; // Simula um ID
+                const telefoneLimpo = clienteAtual.telefone.replace(/\D/g, '');
+                const codigoEntrega = telefoneLimpo.slice(-4); // Últimos 4 dígitos do telefone como código
 
-                if (!response.ok || !data.success) {
+                const data = { success: true, pedidoId: numeroPedido };
+
+                if (!data.success) {
                     throw new Error(data.message || 'Falha ao criar o pedido. Tente novamente.');
                 }
-
-                const numeroPedido = data.pedidoId;
-                // Usa os últimos 4 dígitos do telefone limpo como código de entrega
-                const codigoEntrega = clienteAtual.telefone.replace(/\D/g, '').slice(-4); 
 
                 document.getElementById('nome-cliente-confirmacao').textContent = clienteAtual.nome.split(' ')[0];
                 document.getElementById('numero-pedido').textContent = `#${numeroPedido}`;
@@ -893,11 +923,33 @@
             historicoContainer.innerHTML = '<p>Buscando seu histórico... <i class="fas fa-spinner fa-spin"></i></p>';
             
             try {
-                const response = await fetch(`/api/historico/${telefone}`);
-                if (!response.ok) {
-                    throw new Error('Não foi possível buscar o histórico. Tente mais tarde.');
+                // Simulação de API. Em um ambiente real, você faria uma requisição para o seu backend.
+                // Ex: const response = await fetch(`/api/historico/${telefone}`);
+                // Aqui, vamos simular alguns pedidos de exemplo.
+                let pedidos = [];
+                if (telefone === '11987654321') { // Telefone de exemplo para histórico
+                    pedidos = [
+                        {
+                            dataPedido: new Date('2025-07-08T14:30:00Z').toISOString(),
+                            valorTotal: 44.90 + TAXA_ENTREGA,
+                            status: 'Entregue',
+                            itens: [{ nomeProduto: 'Combo Dokinha 01', quantidade: 1, observacao: 'Sem cebola' }]
+                        },
+                        {
+                            dataPedido: new Date('2025-07-05T19:00:00Z').toISOString(),
+                            valorTotal: 39.99 + TAXA_ENTREGA,
+                            status: 'Entregue',
+                            itens: [{ nomeProduto: 'Doka Cheddar Bacon 180g', quantidade: 1, observacao: '' }]
+                        }
+                    ];
+                } else if (telefone === clienteAtual.telefone.replace(/\D/g, '')) {
+                    // Se for o cliente atual, mas não o de exemplo, simula sem histórico
+                    pedidos = [];
+                } else {
+                    // Para qualquer outro telefone, retorna vazio
+                    pedidos = [];
                 }
-                const pedidos = await response.json();
+
 
                 if (pedidos.length === 0) {
                     historicoContainer.innerHTML = '<p style="text-align:center; color:#888;">Você ainda não fez nenhum pedido conosco.</p>';
