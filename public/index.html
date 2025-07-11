@@ -79,7 +79,7 @@
         }
 
         .produtos-container { padding: 15px; }
-        .produto-card { background: var(--branco); border-radius: 10px; overflow: hidden; margin-bottom: 20px; box-shadow: 0 3px 10px rgba(0,0,0,0.1); display: flex; cursor: pointer; }
+        .produto-card { background: var(--branco); border-radius: 10px; overflow: hidden; margin-bottom: 20px; box-shadow: 0 3px 10px rgba(0,0,0,0.1); display: flex; }
         .produto-imagem-container { width: 120px; height: 120px; min-width: 120px; }
         .produto-imagem { width: 100%; height: 100%; object-fit: cover; }
         .produto-conteudo { padding: 15px; flex-grow: 1; display: flex; flex-direction: column; }
@@ -90,227 +90,16 @@
         .produto-preco-container { display: flex; flex-direction: column; align-items: flex-start; }
         .produto-preco { font-size: 18px; font-weight: bold; color: var(--laranja); }
         .produto-preco-antigo { font-size: 12px; color: #999; text-decoration: line-through; }
-        .add-btn { background: var(--laranja); color: var(--branco); border: none; width: 36px; height: 36px; border-radius: 50%; font-size: 16px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s; }
-        .add-btn:hover { transform: scale(1.1); }
+        .add-btn { background: var(--laranja); color: var(--branco); border: none; width: 36px; height: 36px; border-radius: 50%; font-size: 16px; cursor: pointer; display: flex; align-items: center; justify-content: center; }
         
-        .carrinho-btn { position: fixed; bottom: 20px; right: 20px; background: var(--laranja); color: var(--branco); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; box-shadow: 0 3px 15px rgba(0,0,0,0.3); cursor: pointer; z-index: 80; border: none; transition: all 0.3s; }
-        .carrinho-btn:hover { transform: scale(1.1); }
+        .carrinho-btn { position: fixed; bottom: 20px; right: 20px; background: var(--laranja); color: var(--branco); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; box-shadow: 0 3px 15px rgba(0,0,0,0.3); cursor: pointer; z-index: 80; border: none; }
         .carrinho-contador { position: absolute; top: -5px; right: -5px; background: var(--marrom); color: var(--branco); width: 25px; height: 25px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: bold; }
         
         @keyframes modalFadeIn { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
-        @keyframes modalProductScaleIn { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
 
         .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.8); z-index: 999; align-items: center; justify-content: center; }
         .modal-content { background: white; padding: 25px; border-radius: 15px; width: 90%; max-width: 500px; box-shadow: 0 5px 25px rgba(0,0,0,0.3); animation: modalFadeIn 0.3s; display: flex; flex-direction: column; max-height: 80vh; position: relative; }
         .modal-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #ddd; padding-bottom: 10px; margin-bottom: 15px; }
-        
-        /* Modal de Detalhes do Produto */
-        .modal-produto-content {
-            background: white;
-            border-radius: 15px;
-            width: 90%;
-            max-width: 700px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            animation: modalProductScaleIn 0.3s ease-out;
-            display: flex;
-            max-height: 90vh;
-            position: relative;
-            overflow: hidden;
-            border: 3px solid var(--laranja);
-        }
-        
-        .modal-produto-imagem {
-            width: 45%;
-            min-width: 250px;
-            object-fit: cover;
-            border-radius: 15px 0 0 15px;
-            border-right: 3px dashed var(--laranja);
-        }
-        
-        .modal-produto-info {
-            width: 55%;
-            padding: 25px;
-            display: flex;
-            flex-direction: column;
-            overflow-y: auto;
-            background: linear-gradient(to bottom, #FFF9F2, white);
-        }
-        
-        .modal-produto-info h3 {
-            font-size: 26px;
-            color: var(--marrom);
-            margin-bottom: 10px;
-            font-family: 'Arial Black', sans-serif;
-            text-transform: uppercase;
-            border-bottom: 2px solid var(--laranja);
-            padding-bottom: 8px;
-        }
-        
-        .modal-produto-info .produto-descricao {
-            font-size: 15px;
-            color: #555;
-            margin-bottom: 20px;
-            line-height: 1.5;
-            flex-grow: 1;
-            background-color: #FFF9E6;
-            padding: 15px;
-            border-radius: 8px;
-            border-left: 3px solid var(--laranja);
-        }
-        
-        .modal-produto-info .produto-preco {
-            font-size: 28px;
-            font-weight: bold;
-            color: var(--laranja);
-            margin-bottom: 20px;
-            text-align: center;
-            background-color: #FFF3E0;
-            padding: 10px;
-            border-radius: 8px;
-            border: 2px dashed var(--laranja);
-        }
-        
-        .modal-obs-label {
-            font-weight: bold;
-            margin-bottom: 8px;
-            font-size: 14px;
-            color: var(--marrom);
-        }
-        
-        .modal-obs-textarea {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid var(--laranja);
-            border-radius: 8px;
-            font-size: 14px;
-            resize: vertical;
-            min-height: 60px;
-            margin-bottom: 20px;
-            background-color: #FFF9E6;
-        }
-        
-        .modal-compra-actions {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-top: 10px;
-        }
-        
-        .modal-quantidade-controls {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            background-color: var(--cinza);
-            padding: 5px 10px;
-            border-radius: 50px;
-            border: 1px solid var(--laranja);
-        }
-        
-        .modal-quantidade-controls button {
-            background: var(--laranja);
-            color: white;
-            border: none;
-            width: 35px;
-            height: 35px;
-            border-radius: 50%;
-            font-size: 18px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.2s;
-        }
-        
-        .modal-quantidade-controls button:hover {
-            background: var(--marrom);
-        }
-        
-        .modal-quantidade-controls span {
-            font-size: 20px;
-            font-weight: bold;
-            min-width: 30px;
-            text-align: center;
-            color: var(--marrom);
-        }
-        
-        #btn-adicionar-modal {
-            flex-grow: 1;
-            background: var(--laranja);
-            color: var(--branco);
-            border: none;
-            padding: 12px;
-            border-radius: 50px;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            transition: all 0.2s;
-            box-shadow: 0 3px 10px rgba(255,107,0,0.3);
-        }
-        
-        #btn-adicionar-modal:hover {
-            background: var(--marrom);
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(255,107,0,0.4);
-        }
-        
-        .modal-nav-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: rgba(255,107,0,0.8);
-            color: white;
-            border: none;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            font-size: 16px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 1010;
-            transition: all 0.2s;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-        }
-        
-        .modal-nav-btn:hover {
-            background-color: var(--marrom);
-            transform: translateY(-50%) scale(1.1);
-        }
-        
-        #modal-nav-prev {
-            left: 15px;
-        }
-        
-        #modal-nav-next {
-            right: 15px;
-        }
-        
-        #fechar-detalhes-btn {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: var(--marrom);
-            color: white;
-            border: none;
-            width: 35px;
-            height: 35px;
-            border-radius: 50%;
-            font-size: 20px;
-            cursor: pointer;
-            z-index: 1010;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.2s;
-        }
-        
-        #fechar-detalhes-btn:hover {
-            background: var(--laranja);
-            transform: rotate(90deg);
-        }
         
         #carrinho-itens { overflow-y: auto; flex-grow: 1; padding-right: 10px; }
         .carrinho-item { display: flex; flex-direction: column; margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px solid #eee; }
@@ -386,6 +175,26 @@
             bottom: 20px;
         }
 
+        @media screen and (max-width: 480px) {
+            .modal-content {
+                padding: 20px;
+            }
+            .confirmacao-content h2 {
+                font-size: 22px;
+            }
+            .emoji-header {
+                font-size: 50px;
+            }
+            .codigo-entrega {
+                font-size: 26px;
+                padding: 12px;
+                letter-spacing: 3px;
+            }
+            .confirmacao-content p {
+                font-size: 15px;
+            }
+        }
+        
         .pedido-card {
             background-color: #f9f9f9;
             border: 1px solid #ddd;
@@ -411,62 +220,6 @@
         }
         .pedido-card-body ul li {
             margin-bottom: 5px;
-        }
-
-        @media screen and (max-width: 800px) {
-            #modal-nav-prev { left: 5px; }
-            #modal-nav-next { right: 5px; }
-        }
-        
-        @media screen and (max-width: 650px) {
-            .modal-produto-content {
-                flex-direction: column;
-                max-width: 400px;
-            }
-            
-            .modal-produto-imagem {
-                width: 100%;
-                height: 200px;
-                border-radius: 15px 15px 0 0;
-                border-right: none;
-                border-bottom: 3px dashed var(--laranja);
-            }
-            
-            .modal-produto-info {
-                width: 100%;
-                padding: 20px;
-            }
-            
-            .modal-compra-actions {
-                flex-direction: column;
-                gap: 15px;
-                align-items: stretch;
-            }
-            
-            .modal-nav-btn {
-                top: 100px;
-                transform: translateY(-50%);
-            }
-        }
-
-        @media screen and (max-width: 480px) {
-            .modal-content {
-                padding: 20px;
-            }
-            .confirmacao-content h2 {
-                font-size: 22px;
-            }
-            .emoji-header {
-                font-size: 50px;
-            }
-            .codigo-entrega {
-                font-size: 26px;
-                padding: 12px;
-                letter-spacing: 3px;
-            }
-            .confirmacao-content p {
-                font-size: 15px;
-            }
         }
     </style>
 </head>
@@ -665,33 +418,6 @@
         </div>
     </div>
 
-    <!-- Modal de Detalhes do Produto -->
-    <div id="modalDetalhesProduto" class="modal">
-        <div class="modal-produto-content">
-            <button id="modal-nav-prev" class="modal-nav-btn"><i class="fas fa-chevron-left"></i></button>
-            <img id="modal-produto-imagem" src="" alt="Imagem do produto" class="modal-produto-imagem">
-            <div class="modal-produto-info">
-                <h3 id="modal-produto-nome"></h3>
-                <p id="modal-produto-descricao" class="produto-descricao"></p>
-                <div id="modal-produto-preco" class="produto-preco"></div>
-                <label for="modal-obs-textarea" class="modal-obs-label">Observações:</label>
-                <textarea id="modal-obs-textarea" class="modal-obs-textarea" placeholder="Ex: Sem cebola, ponto da carne, etc."></textarea>
-                <div class="modal-compra-actions">
-                    <div class="modal-quantidade-controls">
-                        <button id="modal-diminuir-qtd">-</button>
-                        <span id="modal-quantidade">1</span>
-                        <button id="modal-aumentar-qtd">+</button>
-                    </div>
-                    <button id="btn-adicionar-modal">
-                        <i class="fas fa-cart-plus"></i> Adicionar ao Carrinho
-                    </button>
-                </div>
-            </div>
-            <button id="fechar-detalhes-btn">&times;</button>
-            <button id="modal-nav-next" class="modal-nav-btn"><i class="fas fa-chevron-right"></i></button>
-        </div>
-    </div>
-
     <script>
         const NOME_HAMBURGUERIA = "DokaBurger";
         const TAXA_ENTREGA = 5.00;
@@ -715,27 +441,12 @@
         const btnMeusPedidos = document.getElementById('btn-meus-pedidos');
         const btnBuscarHistorico = document.getElementById('btn-buscar-historico');
 
-        // Variáveis do modal de detalhes
-        const modalDetalhesProduto = document.getElementById('modalDetalhesProduto');
-        const modalProdutoImagem = document.getElementById('modal-produto-imagem');
-        const modalProdutoNome = document.getElementById('modal-produto-nome');
-        const modalProdutoDescricao = document.getElementById('modal-produto-descricao');
-        const modalProdutoPreco = document.getElementById('modal-produto-preco');
-        const modalObsTextarea = document.getElementById('modal-obs-textarea');
-        const modalQuantidadeSpan = document.getElementById('modal-quantidade');
-        const btnModalNavPrev = document.getElementById('modal-nav-prev');
-        const btnModalNavNext = document.getElementById('modal-nav-next');
-        const btnAdicionarModal = document.getElementById('btn-adicionar-modal');
-
         let carrinho = [];
         let clienteAtual = null;
         let metodoPagamentoSelecionado = null;
-        let contextoLogin = 'pedido';
-        let produtoAtualModal = null;
-        let produtosVisiveisModal = [];
-        let indiceAtualModal = -1;
-        let quantidadeModal = 1;
+        let contextoLogin = 'pedido'; // Variável de contexto adicionada
 
+        // Função de throttling para otimizar eventos
         function throttle(func, limit) {
             let inThrottle;
             return function() {
@@ -749,6 +460,7 @@
             };
         }
 
+        // Verifica se um elemento está visível
         function isElementVisible(el) {
             const rect = el.getBoundingClientRect();
             return (
@@ -759,15 +471,12 @@
 
         const cardapioDB = [
             // Burgers 180g
-            { id: 'p1', nome: 'Doka Cheddar Bacon 180g', preco: 39.99, descricao: 'Hambúrguer 180g, pão brioche, cheddar, bacon crocante e molho artesanal.', imagem: 'https://raw.githubusercontent.com/engeve89/imagenscardapio/refs/heads/main/foto/doka-classic-burguer.jpg', categoria: 'Burgers 180g' },
-            { id: 'p2', nome: 'Doka Duty', preco: 49.90, preco_antigo: 55.00, descricao: '2x Hambúrgueres 180g, bacon em dobro, queijo prato, cebola caramelizada em dobro, alface/rúcula, tomate e molho.', imagem: 'https://engeve89.github.io/imagenscardapio/foto/doka%20duty.avif', categoria: 'Burgers 180g' },
+            { id: 'p1', nome: 'Doka Cheddar Bacon 180g', preco: 39.99, descricao: 'Hambúrguer 180g, pão brioche, cheddar, bacon crocante e molho artesanal.', imagem: 'https://nadinbaidu.github.io/fotos-do-site-main/raw-chiken-bacon-especial....jpeg', categoria: 'Burgers 180g' },
+            { id: 'p2', nome: 'Doka Duty', preco: 49.90, preco_antigo: 55.00, descricao: '2x Hambúrgueres 180g, bacon em dobro, queijo prato, cebola caramelizada em dobro, alface/rúcula, tomate e molho.', imagem: 'https://nadinbaidu.github.io/fotos-do-site-main/x-salada-da-casa.jpg', categoria: 'Burgers 180g' },
             { id: 'p3', nome: 'Big Doka', preco: 42.90, preco_antigo: 45.00, descricao: '2x Hambúrgueres 120g, alface, queijo, molho especial, cebola, picles, pão com gergelim.', imagem: 'https://images.unsplash.com/photo-1572802419224-296b0aeee0d9?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80', categoria: 'Burgers 180g' },
             { id: 'p4', nome: 'Doka Burguer 180g', preco: 36.90, descricao: 'Hambúrguer 180g, pão brioche, queijo prato e molho artesanal.', imagem: 'https://engeve89.github.io/imagenscardapio/foto/doka-burguer-180g.avif', categoria: 'Burgers 180g' },
             { id: 'p5', nome: 'doka cheese egg Bacon 180g', preco: 39.90, descricao: 'Hambúrguer 180g, pão brioche, queijo prato, bacon e molho artesanal.', imagem: 'https://engeve89.github.io/imagenscardapio/foto/bell-cheese-egg-bacon.avif', categoria: 'Burgers 180g' },
             { id: 'p6', nome: 'Doka Salada 180g', preco: 36.90, descricao: 'Hambúrguer 180g, pão brioche, queijo prato, alface ou rúcula, tomate e molho artesanal.', imagem: 'https://engeve89.github.io/imagenscardapio/foto/bell-cheese-salada.avif', categoria: 'Burgers 180g' },
-            { id: 'p7', nome: 'Doka Burguer simplão', preco: 24.90, descricao: 'Hambúrguer 180g, pão, picles, queijo prato e molho artesanal.', imagem: 'https://nadinbaidu.github.io/fotos-do-site-main/doka-burguer-simplao.jpg', categoria: 'Burgers 180g' },
-            { id: 'p8', nome: 'simplão EGG', preco: 26.90, descricao: 'Hambúrguer 180g, pão, catupiry, queijo cheddar, ovo, molho artesanal.', imagem: 'https://nadinbaidu.github.io/fotos-do-site-main/simplao-egg.jpg', categoria: 'Burgers 180g' },
-            { id: 'p9', nome: 'x-salada da casa', preco: 34.90, descricao: 'Hambúrguer 180g, pão, queijo prato, molho artesanal, alface, tomate, cebola.', imagem: 'https://nadinbaidu.github.io/fotos-do-site-main/x-salada-da-casa.jpg', categoria: 'Burgers 180g' },
             
             // Burgers 120g
             { id: 'b12_1', nome: 'Doka Burguer 120g', preco: 32.90, descricao: 'Hambúrguer 120g, pão brioche, queijo prato e molho da casa.', imagem: 'https://engeve89.github.io/imagenscardapio/foto/cheese-burguer-doka.jpg', categoria: 'Burgers 120g' },
@@ -778,12 +487,9 @@
             { id: 'b12_10', nome: 'Doka Triplo Cheesebacon', preco: 29.90, descricao: "Pão, 3 smash's 70g, 3 queijos cheddar, bacon, ketchup e mostarda.", imagem: 'https://engeve89.github.io/imagenscardapio/foto/doka-triplo-cheesebacon.avif', categoria: 'Burgers 120g' },
             { id: 'b12_11', nome: 'Triplo Cheesesalada', preco: 32.90, descricao: "Pão, 3 smash's 70g, 3 queijos cheddar, alface, molho especial, picles e cebola.", imagem: 'https://engeve89.github.io/imagenscardapio/foto/triplo-cheesesalada.avif', categoria: 'Burgers 120g' },
 
-            // Frango
+            // Lanches de Frango
             { id: 'f2', nome: 'Doka Kids Chicken', preco: 29.90, descricao: 'Pão de gergelim, frango empanado, maionese, tomate e alface picado.', imagem: 'https://engeve89.github.io/imagenscardapio/foto/doka-kids-chicken.avif', categoria: 'Frango' },
-            { id: 'f3', nome: 'Raw chiken', preco: 35.90, descricao: 'pão, hambúrguer 180g de Coxa e sobrecoxa empanado, queijo prato, catupiry, molho artesanal, picles.', imagem: 'https://raw.githubusercontent.com/nadinbaidu/fotos-do-site-cardapio/refs/heads/main/fotos-do-site-main/Raw%20chiken.png', categoria: 'Frango' },
-            { id: 'f4', nome: 'Raw chiken bacon', preco: 37.90, descricao: 'pão, hambúrguer 180g de Coxa e sobrecoxa empanado, bacon, queijo prato, molho artesanal, alface, tomate.', imagem: 'https://raw.githubusercontent.com/nadinbaidu/fotos-do-site-cardapio/refs/heads/main/fotos-do-site-main/Raw%20chiken%20bacon.jpeg', categoria: 'Frango' },
-            { id: 'f5', nome: 'Raw chiken bacon especial...', preco: 37.90, descricao: 'pão, hambúrguer 180g de Coxa e sobrecoxa empanado, bacon, queijo prato, molho artesanal, mix de repolho e saladas.', imagem: 'https://raw.githubusercontent.com/nadinbaidu/fotos-do-site-cardapio/refs/heads/main/fotos-do-site-main/Raw%20chiken%20bacon%20especial....jpeg', categoria: 'Frango' },
-
+            
             // Combos
             { id: 'c1', nome: 'Combo Dokinha 01', preco: 44.90, descricao: 'Pão brioche, Hambúrguer 150g, cheddar, molho especial + Fritas + Refri 350ml.', imagem: 'https://engeve89.github.io/imagenscardapio/foto/combo-dokinha01.avif', categoria: 'Combos' },
             { id: 'c2', nome: 'Combo Dokinha Salada', preco: 48.60, descricao: 'Pão brioche, Hambúrguer 150g, cheddar, cebola roxa, picles, alface, tomate, maionese + Fritas + Refri 350ml.', imagem: 'https://engeve89.github.io/imagenscardapio/foto/combo-dokinha-salada.avif', categoria: 'Combos' },
@@ -826,74 +532,22 @@
             produtosContainer.appendChild(fragment);
         }
 
-        function exibirProdutoNoModal(index) {
-            indiceAtualModal = index;
-            produtoAtualModal = produtosVisiveisModal[index];
-            if (!produtoAtualModal) return;
-            
-            modalProdutoImagem.src = produtoAtualModal.imagem;
-            modalProdutoNome.textContent = produtoAtualModal.nome;
-            modalProdutoDescricao.textContent = produtoAtualModal.descricao;
-            
-            let precoTexto = `R$ ${produtoAtualModal.preco.toFixed(2).replace('.', ',')}`;
-            if (produtoAtualModal.preco_antigo) {
-                precoTexto += ` <span style="font-size: 16px; color: #999; text-decoration: line-through;">R$ ${produtoAtualModal.preco_antigo.toFixed(2).replace('.', ',')}</span>`;
-            }
-            modalProdutoPreco.innerHTML = precoTexto;
-            
-            quantidadeModal = 1;
-            modalQuantidadeSpan.textContent = quantidadeModal;
-            modalObsTextarea.value = '';
-            
-            btnModalNavPrev.style.display = index === 0 ? 'none' : 'flex';
-            btnModalNavNext.style.display = index === produtosVisiveisModal.length - 1 ? 'none' : 'flex';
-        }
-
-        function abrirModalDetalhes(id) {
-            const categoriaAtiva = document.querySelector('.categoria-btn.ativo').dataset.categoria;
-            produtosVisiveisModal = cardapioDB.filter(p => p.categoria === categoriaAtiva);
-            const indexDoProduto = produtosVisiveisModal.findIndex(p => p.id === id);
-
-            if (indexDoProduto === -1) return;
-            exibirProdutoNoModal(indexDoProduto);
-            modalDetalhesProduto.style.display = 'flex';
-            document.body.style.overflow = 'hidden';
-        }
-
-        function fecharModalDetalhes() {
-            modalDetalhesProduto.style.display = 'none';
-            document.body.style.overflow = 'auto';
-            produtoAtualModal = null;
-            produtosVisiveisModal = [];
-            indiceAtualModal = -1;
-        }
-
-        function adicionarAoCarrinho(id, quantidade = 1, observacao = "") {
+        function adicionarAoCarrinho(id) {
             const produto = cardapioDB.find(p => p.id === id);
-            const itemExistente = carrinho.find(item => item.id === id && item.observacao === observacao);
-            
+            const itemExistente = carrinho.find(item => item.id === id);
             if (itemExistente) { 
-                itemExistente.quantidade += quantidade; 
+                itemExistente.quantidade++; 
             } else { 
                 carrinho.push({ 
                     ...produto, 
-                    quantidade: quantidade, 
-                    observacao: observacao 
+                    quantidade: 1, 
+                    observacao: "" 
                 }); 
             }
-            
             atualizarContadorCarrinho();
             atualizarModalCarrinho();
-            
-            // Feedback visual
-            btnAdicionarModal.innerHTML = '<i class="fas fa-check"></i> Adicionado!';
-            btnAdicionarModal.style.background = 'var(--verde)';
-            setTimeout(() => {
-                btnAdicionarModal.innerHTML = '<i class="fas fa-cart-plus"></i> Adicionar ao Carrinho';
-                btnAdicionarModal.style.background = 'var(--laranja)';
-            }, 1500);
         }
-
+        
         function removerDoCarrinho(id, removerTudo = false) {
             const itemIndex = carrinho.findIndex(item => item.id === id);
             if (itemIndex > -1) {
@@ -999,13 +653,15 @@
                 }
                 
                 clienteAtual = data.cliente;
-                clienteAtual.telefone = telefoneCru;
+                clienteAtual.telefone = telefoneCru; // Guarda o telefone no formato original com DD
 
+                // Lógica de contexto aplicada
                 if (contextoLogin === 'historico') {
                     fecharModalLogin();
                     abrirModalHistorico();
-                    contextoLogin = 'pedido';
+                    contextoLogin = 'pedido'; // Reseta o contexto
                 } else {
+                    // Lógica padrão de pedido
                     if (data.isNew) {
                         abrirModalEndereco();
                     } else {
@@ -1084,7 +740,8 @@
                 }
 
                 const numeroPedido = data.pedidoId;
-                const codigoEntrega = clienteAtual.telefone.replace(/\D/g, '').slice(-4);
+                // Usa os últimos 4 dígitos do telefone limpo como código de entrega
+                const codigoEntrega = clienteAtual.telefone.replace(/\D/g, '').slice(-4); 
 
                 document.getElementById('nome-cliente-confirmacao').textContent = clienteAtual.nome.split(' ')[0];
                 document.getElementById('numero-pedido').textContent = `#${numeroPedido}`;
@@ -1218,6 +875,7 @@
         function abrirModalHistorico() {
             modalHistorico.style.display = 'flex';
             if (clienteAtual && clienteAtual.telefone) {
+                // Remove qualquer caractere não numérico antes de passar para a função
                 const telefoneLimpo = clienteAtual.telefone.replace(/\D/g, ''); 
                 carregarHistorico(telefoneLimpo);
                 btnBuscarHistorico.style.display = 'none';
@@ -1248,10 +906,10 @@
 
                 historicoContainer.innerHTML = '';
                 pedidos.forEach(pedido => {
-                    let dataFormatada = 'Data Indisponível';
+                    let dataFormatada = 'Data Indisponível'; // Mensagem padrão se a data for inválida
                     try {
                         const dateObject = new Date(pedido.dataPedido);
-                        if (!isNaN(dateObject.getTime())) {
+                        if (!isNaN(dateObject.getTime())) { // Verifica se a data é válida
                             dataFormatada = dateObject.toLocaleDateString('pt-BR', { day: '2-digit', month: 'long', year: 'numeric' });
                         } else {
                             console.warn("Data do pedido inválida:", pedido.dataPedido);
@@ -1290,12 +948,9 @@
             atualizarContadorCarrinho();
             gerenciarBotoesScrollMenu();
             
-            // Adicionado o event listener para o botão do carrinho
-            document.querySelector('.carrinho-btn').addEventListener('click', abrirModalCarrinho);
-
             const trocoInput = document.getElementById('troco-input');
             trocoInput.addEventListener('input', throttle(function() {
-                const trocoValue = parseFloat(this.value.replace(',', '.'));
+                const trocoValue = parseFloat(this.value.replace(',', '.')); // Garante que a vírgula é tratada como ponto
                 const valorPedido = calcularTotalPedido();
                 const trocoCalculado = document.getElementById('troco-calculado');
                 
@@ -1321,62 +976,25 @@
                 }); 
             });
             
-            produtosContainer.addEventListener('click', (event) => {
-                const card = event.target.closest('.produto-card');
-                const addBtn = event.target.closest('.add-btn');
-                
-                if (addBtn) {
-                    event.stopPropagation();
-                    adicionarAoCarrinho(addBtn.dataset.id);
-                    addBtn.innerHTML = '<i class="fas fa-check"></i>';
-                    addBtn.style.background = 'var(--verde)';
-                    setTimeout(() => {
-                        addBtn.innerHTML = '+';
-                        addBtn.style.background = 'var(--laranja)';
-                    }, 1000);
-                } else if (card) {
-                    const produtoId = card.querySelector('.add-btn').dataset.id;
-                    abrirModalDetalhes(produtoId);
-                }
-            });
-
-            // Listeners do Modal de Detalhes
-            document.getElementById('fechar-detalhes-btn').addEventListener('click', fecharModalDetalhes);
-            
-            btnModalNavPrev.addEventListener('click', () => {
-                if (indiceAtualModal > 0) {
-                    exibirProdutoNoModal(indiceAtualModal - 1);
-                }
+            produtosContainer.addEventListener('click', (event) => { 
+                const addBtn = event.target.closest('.add-btn'); 
+                if (addBtn) { 
+                    adicionarAoCarrinho(addBtn.dataset.id); 
+                    addBtn.innerHTML = '<i class="fas fa-check"></i>'; 
+                    addBtn.style.background = 'var(--verde)'; 
+                    setTimeout(() => { 
+                        addBtn.innerHTML = '+'; 
+                        addBtn.style.background = 'var(--laranja)'; 
+                    }, 1000); 
+                } 
             });
             
-            btnModalNavNext.addEventListener('click', () => {
-                if (indiceAtualModal < produtosVisiveisModal.length - 1) {
-                    exibirProdutoNoModal(indiceAtualModal + 1);
-                }
-            });
-            
-            document.getElementById('modal-diminuir-qtd').addEventListener('click', () => {
-                if (quantidadeModal > 1) {
-                    quantidadeModal--;
-                    modalQuantidadeSpan.textContent = quantidadeModal;
-                }
-            });
-            
-            document.getElementById('modal-aumentar-qtd').addEventListener('click', () => {
-                quantidadeModal++;
-                modalQuantidadeSpan.textContent = quantidadeModal;
-            });
-            
-            btnAdicionarModal.addEventListener('click', () => {
-                const observacao = modalObsTextarea.value;
-                adicionarAoCarrinho(produtoAtualModal.id, quantidadeModal, observacao);
-            });
-            
-            // Fechar modal ao clicar fora
-            modalDetalhesProduto.addEventListener('click', (e) => {
-                if (e.target === modalDetalhesProduto) {
-                    fecharModalDetalhes();
-                }
+            document.querySelector('.carrinho-btn').addEventListener('click', () => { 
+                if(carrinho.length === 0) { 
+                    alert('Seu carrinho está vazio!'); 
+                    return; 
+                } 
+                abrirModalCarrinho(); 
             });
             
             carrinhoItensContainer.addEventListener('input', (event) => { 
@@ -1426,12 +1044,17 @@
             });
 
             btnMeusPedidos.addEventListener('click', () => {
-                contextoLogin = 'historico';
-                abrirModalLogin();
+                contextoLogin = 'historico'; // Define o contexto para histórico
+                abrirModalLogin(); // Abre o modal de login para pegar o telefone do cliente
             });
             
+            // Lógica do botão de busca atualizada
             btnBuscarHistorico.addEventListener('click', () => {
+                // A função verificarTelefone já lida com o contexto
+                // Ao clicar em 'Buscar com meu WhatsApp', o fluxo vai para verificarTelefone que,
+                // se o contexto for 'historico', chamará abrirModalHistorico novamente.
                 const telefoneInput = document.getElementById('input-telefone');
+                // Assume que o input-telefone já está preenchido pelo modal de login
                 verificarTelefone(); 
             });
 
